@@ -42,17 +42,28 @@ console.log(`Bonus: $${calculateBonus(7000, "Good")}`); //Expected output: "Bonu
 //Task 4: Subscription Pricing Model - Parameters and Arguments
 //Write a function calculateSubscriptionCost(plan, months, discount = 0) that calculates cost based on subscription plans.
 const calculateSubscriptionCost = (plan, months, discount = 0) => {
-    let totalCost =0;
+    let totalCost = 0;
     if (plan === "Basic") {
-        totalCost = (10 * months) - discount;
+        totalCost = (10 * months) - discount; //$10/month if the subscription plan is basic.
     } else if (plan === "Premium") {
-        totalCost = (20 * months) - discount;
+        totalCost = (20 * months) - discount; //$20/month if the subscription plan is premium.
     } else if (plan === "Enterprise") {
-        totalCost = (50 * months) - discount;
+        totalCost = (50 * months) - discount; //$50/month is the subscription plan is enterprise.
     }
     return totalCost;
 
 };
 //Log the results.
-console.log(`Total Cost: $${calculateSubscriptionCost("Basic", 6, 10)}`);
-console.log(`Total Cost: $${calculateSubscriptionCost("Premium", 12, 0)}`);
+console.log(`Total Cost: $${calculateSubscriptionCost("Basic", 6, 10)}`); //Expected output: "Total Cost: $50"
+console.log(`Total Cost: $${calculateSubscriptionCost("Premium", 12, 0)}`); //Expected output: "Total Cost: $240"
+
+
+//Task 5: Currency Conversion - Returning Values
+//Write a function convertCurrency(amount, exchangeRate) that returns the converted amount.
+function convertCurrency(amount, exchangeRate) {
+    let convertedAmount = (amount * exchangeRate).toFixed(2); //The formula for calculating the converted amount.
+    return convertedAmount;
+};
+//Log the results.
+console.log(`Converted Amount: $${convertCurrency(100, 1.1)}`); //Expected output: "Converted Amount: $110.00"
+console.log(`Converted Amount: $${convertCurrency(250, 0.85)}`); //Expected output: "Converted Amount: $212.50"
